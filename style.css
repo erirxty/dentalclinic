@@ -1,0 +1,715 @@
+/*
+Theme Name: dentalclinic
+Theme URI: http://dentalclinic.local/
+Author: 土屋絵里佳
+Author URI: http://dentalclinic.local/
+Description: さわやか歯科クリニックのウェブサイトテーマです。
+Version: 1.0
+*/
+
+/* サイト全体 */
+
+:root {
+  /* テーマカラーの定義 */
+  --main-color: #2196f3; /* 青系: クリーンで信頼感のある色 */
+  --accent-color: #ffc107; /* 黄色系: 温かみと活気をプラス */
+  --text-color: #333; /* 濃いグレー: 読みやすさ重視 */
+  --bg-color: #f8f9fa; /* 明るい背景色 */
+  --light-blue: #e3f2fd; /* 薄い青: 清潔感を強調 */
+}
+
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+/* 共通のコンテナ設定 */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--light-blue);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title h1 {
+  font-size: 24px;
+  color: var(--main-color);
+}
+
+.g-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.g-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* メインビジュアル */
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  background-color: var(--light-blue);
+}
+
+.hero-image {
+  max-width: 600px; /* 画像の最大幅を指定 */
+  height: auto; /* 高さは自動調整 */
+  border-radius: 10px; /* 角を丸くする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+}
+
+.doctor-photo {
+  max-width: 250px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+}
+
+/* 診療内容セクション */
+.services,
+.news {
+  padding: 60px 0;
+}
+
+.services h2,
+.news h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--main-color);
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* 親要素（リンク全体）を相対配置に設定 */
+.swiper-slide a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  height: 200px; /* スライドの高さを指定 */
+  overflow: hidden; /* はみ出した画像を隠す */
+}
+
+/* 画像のサイズと位置を調整 */
+.swiper-slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px; /* 画像の幅を調整 */
+  height: auto;
+}
+
+/* 文字のスタイル */
+.swiper-slide h3 {
+  position: absolute;
+  top: 80%; /* 画像の下に配置 */
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  color: #333;
+}
+
+.swiper-wrapper {
+  display: flex;
+  justify-content: space-around; /* 要素を均等に配置 */
+  align-items: center; /* 垂直方向の中央揃え */
+}
+
+/* 院長挨拶セクション */
+.director {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.director h2 {
+  color: var(--main-color);
+  margin-bottom: 40px;
+  display: inline-block;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+}
+
+.director-photo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* ここから追加 */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+/* 院長挨拶セクションの段落の余白を調整 */
+.director p {
+  margin-top: 0; /* 上部の余白を削除 */
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* スタッフ紹介セクション */
+.staff {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.staff h2 {
+  color: var(--main-color);
+  margin-bottom: 40px;
+  display: inline-block;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+}
+
+/* スタッフ一覧をフレックスボックスで横並びに */
+.staff-list {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap; /* 画面が狭いときに折り返す */
+}
+
+/* 各スタッフメンバー */
+.staff-member {
+  width: 250px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* スタッフ写真のスタイル */
+
+/* メインのスタッフ写真のスタイル */
+/* スタッフ紹介のメイン画像（背景画像）のスタイル */
+.staff-main-photo {
+  height: 350px; /* 例：高さを350pxに設定 */
+  width: 100%; /* 横幅を100%に広げる */
+  background-image: url("img1.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 70px;
+  /* その他のスタイル */
+}
+
+.staff-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* 画像を丸くする */
+  object-fit: cover; /* 画像が歪まないようにトリミング */
+  border: 4px solid var(--main-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* スタッフのテキスト部分 */
+.staff-text h3 {
+  font-size: 18px;
+  color: var(--main-color);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.staff-text p {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* お問い合わせセクション */ /* お問い合わせセクション */
+.contact {
+  padding: 60px 0;
+  background-color: #f9f9f9; /* セクションの背景色 */
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 30px;
+  color: var(--main-color);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-color);
+  margin-bottom: 50px;
+}
+
+.contact h2 {
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+
+.contact p {
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* フォームと情報を横並びに */
+.contact-inner {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 連絡先情報（電話番号など） */
+.contact-info {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: left;
+}
+
+.contact-info h3 {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* スライダーの各要素をフレキシブルに調整 */
+.swiper-container {
+  padding-bottom: 30px; /* ページネーションとスペースを確保 */
+}
+
+/* スライド自体の設定 */
+.swiper-slide {
+  display: flex; /* Flexboxを使い、中身を中央に配置 */
+  flex-direction: column; /* 縦方向に並べる */
+  align-items: center; /* 水平方向の中央に配置 */
+  text-align: center; /* テキストも中央に */
+}
+
+/* スライダー内の画像サイズ調整 */
+.swiper-slide a {
+  display: block; /* ブロック要素にして画像のサイズを調整しやすくする */
+  width: 100%;
+  height: 150px; /* 固定の高さを設定 */
+  overflow: hidden; /* はみ出た画像を隠す */
+  margin-bottom: 10px; /* 画像とテキストの間に余白を追加 */
+}
+
+.swiper-slide img {
+  width: 100%; /* 親要素（swiper-slide）の幅いっぱいに広げる */
+  max-width: 150px; /* 画像の最大幅を指定（例: 150px） */
+  height: 150px; /* 高さを固定（例: 150px） */
+  object-fit: cover; /* 縦横比を維持し、指定サイズに収める */
+  margin-bottom: 10px; /* 画像と文字の間に余白を追加 */
+}
+/* スライド内のテキスト */
+.swiper-slide h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+/* 新しいラッパーにFlexboxを適用 */
+.content-flex {
+  display: flex; /* 子要素を横並びに配置 */
+  align-items: center; /* 縦方向の中央に揃える */
+  gap: 30px; /* 要素間の隙間を空ける */
+  flex-wrap: wrap; /* 画面が狭くなったら折り返す */
+}
+
+/* テキストのスタイル調整 */
+.content-flex p {
+  flex-grow: 1; /* 残りのスペースを埋める */
+}
+
+/* 画像のスタイル調整 */
+.content-flex .service-photo {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 診療内容セクションのカードデザイン */
+.general .container,
+.pediatric .container,
+.oral-surgery .container,
+.prevention .container,
+.orthodontics .container {
+  padding: 30px;
+  background-color: #f7f9fc;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ホバー時の効果 */
+.general .container:hover,
+.pediatric .container:hover,
+.oral-surgery .container:hover,
+.prevention .container:hover,
+.orthodontics .container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 画像とテキストを横並びにするFlexbox */
+.content-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* 奇数番目のセクション（画像左、テキスト右） */
+.general .content-flex,
+.orthodontics .content-flex,
+.pediatric .content-flex {
+  /* ここを追加・修正 */
+  flex-direction: row;
+}
+
+/* 偶数番目のセクション（画像右、テキスト左） */
+.oral-surgery .content-flex, /* ここを修正 */
+.prevention .content-flex {
+  flex-direction: row-reverse;
+}
+
+/* 画像のスタイル */
+.service-photo {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* テキスト部分のスタイル */
+.content-text {
+  flex-grow: 1;
+  line-height: 1.8;
+}
+
+.content-text h2 {
+  margin-top: 0;
+  border-bottom: 3px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+  color: var(--main-color);
+}
+
+/* チェックリストのスタイル */
+.content-text .checklist {
+  /* ここを修正 */
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.content-text p {
+  white-space: pre-wrap;
+}
+
+/* その他のスタイルはそのまま使用 */
+/* フォームの各要素 */
+.contact-form label {
+  display: block; /* ラベルを縦に並べる */
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* お知らせと診察案内の横並びコンテナ */
+.news-and-schedule {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* 画面が狭いときに折り返す */
+}
+
+/* 診察案内のテーブルスタイル */
+.schedule-table {
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: var(--main-color);
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.schedule-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.schedule-table thead {
+  background-color: var(--light-blue);
+  color: var(--main-color);
+}
+
+/* お知らせリストのスタイル */
+.news-list {
+  flex-grow: 1;
+}
+
+.news-list h2 {
+  text-align: left;
+}
+
+.news-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.news-list li {
+  border-bottom: 1px dashed #ddd;
+  padding: 15px 0;
+}
+
+.news-list li a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.news-list li a:hover {
+  color: var(--main-color);
+}
+
+/* 小児歯科のレイアウトとチェックリストの色を修正 */
+/* 奇数番目のセクション（画像左、テキスト右） */
+.general .content-flex,
+.orthodontics .content-flex,
+.pediatric .content-flex {
+  flex-direction: row;
+}
+
+/* 偶数番目のセクション（画像右、テキスト左） */
+.oral-surgery .content-flex,
+.prevention .content-flex {
+  flex-direction: row-reverse;
+}
+
+/* チェックリストのスタイル */
+.content-text .checklist {
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* お問い合わせ */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* paddingとborderを幅に含める */
+  margin-top: 5px;
+}
+
+.contact-form textarea {
+  resize: vertical; /* 縦方向のみリサイズ可能に */
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* アクセスセクション */
+.access {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.access h2 {
+  color: var(--main-color);
+  margin-bottom: 40px;
+}
+
+.access-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.access-details {
+  text-align: left;
+  line-height: 1.8;
+}
+
+.access-details h3 {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+/* フッター */
+.footer {
+  background-color: var(--main-color);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*---------------------------------
+  メディアクエリ：タブレット向け
+---------------------------------*/
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  /* ヘッダー */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .tagline {
+    margin-top: 10px;
+  }
+  .header-info {
+    margin-top: 20px;
+  }
+
+  /* ナビゲーション */
+  .g-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* ヒーローセクション */
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-image {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  /* アクセスセクション */
+  .access-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .access-map {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/*---------------------------------
+  メディアクエリ：スマートフォン向け
+---------------------------------*/
+@media (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+
+  /* サイトタイトル */
+  .site-title {
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-title .logo {
+    width: 150px;
+  }
+
+  /* お問い合わせフォーム */
+  .contact-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+
+  /* スタッフ紹介 */
+  .staff-member {
+    flex-direction: column;
+    text-align: center;
+  }
+  .staff-photo {
+    margin-bottom: 15px;
+  }
+}
