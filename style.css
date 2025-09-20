@@ -65,14 +65,42 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-/* メインビジュアル */
-.hero {
-  text-align: center;
-  padding: 40px 0;
-  background-color: var(--light-blue);
+.btn-primary {
+  display: block; /* aタグをブロック要素に変える */
+  width: 200px; /* 幅を指定する */
+  margin: 0 auto; /* 左右のマージンを自動で設定し、中央揃えにする */
 }
 
+.btn-primary:hover {
+  background-color: #1565c0;
+}
+
+/* ボタンを中央に配置するための親要素のスタイル */
+.about .btn-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* メインビジュアル */
+/* 「さわやか歯科クリニックについて」セクションのスタイル */
+/* セクション全体の背景と余白を調整 */
+.hero {
+  background: linear-gradient(
+    180deg,
+    #f0f8ff,
+    #e6f2ff
+  ); /* 上から下へ流れる淡いグラデーション */
+  padding: 80px 0; /* 上下の余白を増やす */
+}
+
+/* ヒーローコンテンツ（画像とテキスト）のスタイル */
+.hero-content {
+  display: flex;
+  flex-direction: column; /* 要素を縦に並べる */
+  align-items: center; /* 子要素を水平方向に中央揃え */
+  max-width: 800px; /* コンテンツの最大幅を設定 */
+  margin: 0 auto; /* 中央揃えにする */
+}
 .hero-image {
   max-width: 600px; /* 画像の最大幅を指定 */
   height: auto; /* 高さは自動調整 */
@@ -95,11 +123,122 @@ html {
   text-decoration: none;
   border-radius: 50px;
   margin-top: 20px;
+  text-align: center; /* コンテンツ（ボタン）を中央揃えにする */
   transition: background-color 0.3s;
 }
 
 .btn-primary:hover {
   background-color: #1565c0;
+}
+
+/* ボタンを中央に配置するための親要素のスタイル */
+.about .btn-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* 各セクションの余白を統一 */
+section {
+  padding-top: 60px; /* 上部の余白 */
+  padding-bottom: 60px; /* 下部の余白 */
+}
+
+/* 特徴 */
+#facility {
+  background-color: #f7f7f7; /* 薄いグレーの背景色 */
+  padding: 60px 0; /* 上下に60pxの余白 */
+}
+
+/* コンテンツを中央に配置する */
+#facility .container {
+  max-width: 960px; /* PCでの最大幅 */
+  margin: 0 auto; /* 中央寄せ */
+  padding: 0 20px; /* 左右に余白を追加 */
+  text-align: center; /* コンテンツを中央寄せにする場合 */
+}
+
+/* セクション内のすべての見出しに適用 */
+#facility h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* 見出しの下に線を引く */
+#facility h2::after {
+  content: "";
+  display: block;
+  width: auto;
+  height: 2px;
+  background-color: #ff8c00; /* オレンジ色のカラーコード */
+  margin: 10px auto 0;
+}
+
+/* テキストのスタイル */
+#facility p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* セクション内のh2見出しのデザイン */
+#director h2,
+#contact h2,
+#access h2,
+#staff h2,
+#news h2 {
+  font-size: 2rem; /* 少し大きくして存在感を出す */
+  font-weight: 700; /* 太字にする */
+  text-align: center; /* 中央に配置する */
+  color: var(--main-color); /* メインカラーを適用 */
+  position: relative; /* 疑似要素の基準にする */
+  padding-bottom: 20px; /* 下に余白を作る */
+  margin-bottom: 40px; /* セクションのコンテンツとの間に余白を作る */
+}
+
+/* 見出しの下にアクセントラインを引く */
+#director h2::after,
+#contact h2::after,
+#access h2::after,
+#staff h2::after,
+#news h2::after {
+  content: ""; /* 空のコンテンツ */
+  position: absolute; /* 親要素を基準に配置 */
+  bottom: 0; /* 下端に配置 */
+  left: 50%; /* 左から50%の位置に */
+  transform: translateX(-50%); /* 自身を左に50%移動して中央に */
+  width: 60px; /* 線の幅 */
+  height: 4px; /* 線の高さ */
+  background-color: var(--main-color); /* メインカラーを適用 */
+  border-radius: 2px; /* 角を丸くする */
+}
+/* 各セクションに交互の背景色を設定 */
+.director {
+  background-color: #f7f9fc; /* 落ち着いたグレー */
+  padding: 80px 0; /* 上下の余白 */
+}
+
+.staff {
+  background-color: #fff; /* 白 */
+  padding: 80px 0;
+}
+
+.contact {
+  background-color: #f7f9fc; /* 落ち着いたグレー */
+  padding: 80px 0;
+}
+
+.access {
+  background-color: #fff; /* 白 */
+  padding: 80px 0;
+}
+
+.news {
+  background-color: #f7f9fc; /* 落ち着いたグレー */
+  padding: 80px 0;
 }
 
 /* 診療内容セクション */
@@ -108,14 +247,8 @@ html {
   padding: 60px 0;
 }
 
-.services h2,
-.news h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--main-color);
-  border-bottom: 2px solid var(--accent-color);
-  display: inline-block;
-  padding-bottom: 5px;
+p {
+  margin-bottom: 40px;
 }
 
 /* 親要素（リンク全体）を相対配置に設定 */
@@ -152,20 +285,21 @@ html {
   display: flex;
   justify-content: space-around; /* 要素を均等に配置 */
   align-items: center; /* 垂直方向の中央揃え */
+} /* Swiperナビゲーションボタン（矢印）を非表示にする */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+/* スライド1つ分の幅を指定 */
+.swiper-slide {
+  width: 300px; /* スライドの幅を任意で調整 */
 }
 
 /* 院長挨拶セクション */
 .director {
   padding: 60px 0;
   text-align: center;
-}
-
-.director h2 {
-  color: var(--main-color);
-  margin-bottom: 40px;
-  display: inline-block;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
 }
 
 .director-photo {
@@ -195,14 +329,6 @@ html {
 .staff {
   padding: 60px 0;
   text-align: center;
-}
-
-.staff h2 {
-  color: var(--main-color);
-  margin-bottom: 40px;
-  display: inline-block;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
 }
 
 /* スタッフ一覧をフレックスボックスで横並びに */
@@ -269,11 +395,6 @@ html {
   margin-bottom: 20px;
   border-bottom: 2px solid var(--accent-color);
   margin-bottom: 50px;
-}
-
-.contact h2 {
-  color: var(--main-color);
-  margin-bottom: 20px;
 }
 
 .contact p {
@@ -360,7 +481,7 @@ html {
 .content-flex .service-photo {
   flex-shrink: 0;
   width: 100%;
-  max-width: 400px;
+  max-width: 200px;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
@@ -428,14 +549,6 @@ html {
   line-height: 1.8;
 }
 
-.content-text h2 {
-  margin-top: 0;
-  border-bottom: 3px solid var(--accent-color);
-  display: inline-block;
-  padding-bottom: 5px;
-  color: var(--main-color);
-}
-
 /* チェックリストのスタイル */
 .content-text .checklist {
   /* ここを修正 */
@@ -473,15 +586,6 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.schedule-table h2 {
-  text-align: left;
-  margin-bottom: 20px;
-  color: var(--main-color);
-  border-bottom: 2px solid var(--accent-color);
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
 .schedule-table table {
   width: 100%;
   border-collapse: collapse;
@@ -499,13 +603,41 @@ html {
   color: var(--main-color);
 }
 
+/* お知らせの下 　痛みの少ないやさしい治療他　*/
+
+/* 全体のコンテナにflexboxを適用して、アイコンとコンテンツを横並びにする */
+.feature-item {
+  display: flex;
+  align-items: flex-start; /* アイコンとテキストの先頭を揃える */
+  margin-bottom: 40px; /* 各項目の下部に十分な余白を追加 */
+}
+
+/* アイコンを囲むdivのスタイル */
+.feature-icon {
+  flex-shrink: 0; /* アイコンが縮まないようにする */
+  margin-right: 20px; /* アイコンとテキストの間に余白を追加 */
+}
+
+/* SVGのサイズと色を変更 */
+.feature-icon svg {
+  width: 60px; /* アイコンを大きくする */
+  height: auto;
+}
+
+/* SVGの塗りつぶしの色を指定 */
+.feature-icon svg path {
+  fill: #008cba; /* 青色に変更（お好みで調整してください） */
+}
+
+/* テキストコンテンツのスタイル */
+.feature-content h3 {
+  margin-top: 0; /* h3タグのデフォルトの余白をリセット */
+  font-size: 1.5rem; /* 見出しを少し大きくする */
+}
+
 /* お知らせリストのスタイル */
 .news-list {
   flex-grow: 1;
-}
-
-.news-list h2 {
-  text-align: left;
 }
 
 .news-list ul {
@@ -513,18 +645,34 @@ html {
   padding-left: 0;
 }
 
+.news-list h2 {
+  text-align: left;
+}
+
+/* 各リスト項目（li）に適用するスタイル */
 .news-list li {
   border-bottom: 1px dashed #ddd;
   padding: 15px 0;
+  position: relative; /* 子要素（aタグ）の基準となる位置を設定 */
 }
 
+/* aタグ（リンク）に適用するスタイル */
 .news-list li a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text-color); /* 通常の状態ではリンク全体がこの色 */
   transition: color 0.3s;
+
+  /* li全体に広げるためのスタイル */
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 他の要素より手前に表示 */
 }
 
-.news-list li a:hover {
+/* ホバーしたときに、aタグの中のタイトル（news-title）の色を変える */
+.news-list li a:hover .news-title {
   color: var(--main-color);
 }
 
@@ -621,6 +769,10 @@ html {
   text-decoration: none;
 }
 
+.staff-main-photo {
+  background-image: url("<?php echo get_template_directory_uri(); ?>/img1.jpg");
+}
+
 /*---------------------------------
   メディアクエリ：タブレット向け
 ---------------------------------*/
@@ -659,7 +811,112 @@ html {
     max-width: 400px;
     margin-bottom: 20px;
   }
+  /* 「当院について」セクションの3つの特徴を縦に並べる */
+  /* 各特徴ブロックの共通スタイル（既存に追加・修正） */
+  .feature-item {
+    width: 100%; /* 横幅いっぱいに広げる */
+    max-width: 600px; /* PCなど広い画面での最大幅を設定 */
+    border: none; /* 既存のボーダーは削除し、影で区切りを出す */
+    border-radius: 12px; /* 角を少し丸くする */
+    padding: 40px; /* 内側の余白を少し増やす */
+    background-color: #ffffff; /* 明るい背景色 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* 深めの影で立体感を出す */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* スムーズなアニメーション */
+    text-align: center; /* テキストとアイコンを中央に寄せる */
+  }
 
+  /* ホバーエフェクト（マウスを乗せた時の動き） */
+  .feature-item:hover {
+    transform: translateY(-8px); /* 少し上に浮き上がらせる */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); /* 影をさらに強くする */
+  }
+
+  /* アイコンのスタイル調整（既存に追加・修正） */
+  .feature-icon {
+    margin-bottom: 25px; /* アイコンとタイトルの間に余白を追加 */
+    margin-right: 0; /* 元々あった右マージンは不要になる（中央寄せのため） */
+  }
+
+  .feature-icon svg {
+    width: 70px; /* アイコンを少し大きくする */
+    height: 70px; /* アイコンを少し大きくする */
+  }
+
+  /* 各特徴ブロックの共通スタイル（既存に追加・修正） */
+  .feature-item {
+    width: 100%; /* 横幅いっぱいに広げる */
+    max-width: 600px; /* PCなど広い画面での最大幅を設定 */
+    border: none; /* 既存のボーダーは削除し、影で区切りを出す */
+    border-radius: 12px; /* 角を少し丸くする */
+    padding: 40px; /* 内側の余白を少し増やす */
+    background-color: #ffffff; /* 明るい背景色 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* 深めの影で立体感を出す */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* スムーズなアニメーション */
+    text-align: center; /* テキストとアイコンを中央に寄せる */
+  }
+
+  /* ホバーエフェクト（マウスを乗せた時の動き） */
+  .feature-item:hover {
+    transform: translateY(-8px); /* 少し上に浮き上がらせる */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); /* 影をさらに強くする */
+  }
+
+  /* アイコンのスタイル調整（既存に追加・修正） */
+  .feature-icon {
+    margin-bottom: 25px; /* アイコンとタイトルの間に余白を追加 */
+    margin-right: 0; /* 元々あった右マージンは不要になる（中央寄せのため） */
+  }
+
+  .feature-icon svg {
+    width: 70px; /* アイコンを少し大きくする */
+    height: 70px; /* アイコンを少し大きくする */
+  }
+
+  .feature-icon svg path {
+    fill: var(--main-color); /* アイコンの色をメインカラーにする */
+  }
+
+  /* SVGの塗りつぶしの色を指定（メインカラーに統一） */
+  .feature-icon svg path {
+    fill: var(--main-color); /* 青色に変更（お好みで調整してください） */
+  }
+
+  /* タイトルのスタイル調整（既存に追加・修正） */
+  .feature-item h3 {
+    font-size: 1.8rem; /* タイトルを大きく、目立たせる */
+    color: #333; /* 濃いめの色で強調 */
+    margin-bottom: 15px; /* タイトルと説明文の間に余白 */
+    font-weight: 700; /* 太字で強調 */
+  }
+
+  /* 説明文のスタイル調整（既存に追加・修正） */
+  .feature-item p {
+    font-size: 1.05rem; /* 説明文の文字サイズを少し大きく */
+    line-height: 1.7; /* 行の高さを調整して読みやすく */
+    color: #555; /* やや薄めのグレーで読みやすく */
+    margin-bottom: 0; /* 段落の下マージンは不要 */
+  }
+
+  .feature-icon svg path {
+    fill: var(--main-color); /* アイコンの色をメインカラーにする */
+  }
+
+  /* タイトルのスタイル調整（既存に追加・修正） */
+  .feature-item h3 {
+    font-size: 1.8rem; /* タイトルを大きく、目立たせる */
+    color: #333; /* 濃いめの色で強調 */
+    margin-bottom: 15px; /* タイトルと説明文の間に余白 */
+    font-weight: 700; /* 太字で強調 */
+  }
+
+  /* 説明文のスタイル調整（既存に追加・修正） */
+  .feature-item p {
+    font-size: 1.05rem; /* 説明文の文字サイズを少し大きく */
+    line-height: 1.7; /* 行の高さを調整して読みやすく */
+    color: #555; /* やや薄めのグレーで読みやすく */
+    margin-bottom: 0; /* 段落の下マージンは不要 */
+  }
+  .
   /* アクセスセクション */
   .access-info {
     flex-direction: column;
@@ -671,6 +928,20 @@ html {
   }
 }
 
+.logo {
+  max-width: 200px; /* 画像の最大幅を調整 */
+  display: block;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* 投稿画像 */
+.wp-image-18 {
+  max-width: 50%; /* 画像を元のサイズの50%に縮小 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 /*---------------------------------
   メディアクエリ：スマートフォン向け
 ---------------------------------*/

@@ -1,9 +1,12 @@
-</main>
-
-    <footer class="footer">
+<footer class="footer">
       <div class="container">
         <div class="footer-info">
-          <p>さわやか歯科クリニック</p>
+        <div class="site-title">
+        <a href="<?php echo home_url('/#about'); ?>">
+    <img src="<?php echo get_template_directory_uri(); ?>/logo2.svg" alt="さわやか歯科クリニック ロゴ" class="logo" />
+</a>
+
+         
           <p>
             〒105-0001 東京都港区虎ノ門１丁目３−１<br />
             東京メトロ　虎ノ門駅より直結・徒歩1分
@@ -12,25 +15,19 @@
           <p>TEL: 03-xxxx-xxxx</p>
         </div>
         <ul class="footer-links">
-          <li><a href="#">オンライン予約</a></li>
-          <li><a href="#">お問い合わせ</a></li>
-          <li><a href="#">アクセス</a></li>
+          <li><a href="<?php echo home_url('/#about'); ?>">さわやか歯科クリニック</a></li>
+        <li><a href="<?php echo home_url('/#contact'); ?>">お問い合わせ・ご予約</a></li>
+        <li><a href="<?php echo home_url('/#access'); ?>">アクセス</a></li>
+   
+
+   
         </ul>
       </div>
     </footer>
+  
+<!-- Swiperの初期化スクリプト -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/main.js"></script>
 
-    <script>
-        // シンプルな設定
-        const mySwiper = new Swiper(".swiper-container", {
-            loop: true,
-            autoplay: {
-                delay: 4000,
-            },
-            slidesPerView: 3,
-            spaceBetween: 20,
-            
-        });
-    </script>
-    <?php wp_footer(); ?>
 </body>
 </html>
