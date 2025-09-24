@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
       spaceBetween: 10, // スライド間の余白を30pxに
       // 👆ここまで
 
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -45,4 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // 👆ここまで
     });
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const gNav = document.querySelector(".g-nav");
+
+  menuToggle.addEventListener("click", () => {
+    gNav.classList.toggle("is-open");
+  });
 });
